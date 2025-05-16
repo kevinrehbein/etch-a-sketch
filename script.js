@@ -4,9 +4,12 @@ buildGrid(i);
 
 const confirmButton = document.querySelector("button");
 confirmButton.addEventListener("click", () => {
-    deleteGrid(i);
-    i = document.querySelector(".input textarea").value;
-    buildGrid(i);
+    let x = document.querySelector(".input textarea").value; 
+    if (x > 0 && x <= 100) {
+        deleteGrid(i);
+        i = x;
+        buildGrid(i);
+    }
 });
 
 function buildGrid(i) {
